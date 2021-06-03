@@ -1,19 +1,25 @@
 package com.dot.baseandroid.menu.list.adapters
 
 import android.view.ViewGroup
+import androidx.core.view.get
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
+import com.dot.baseandroid.databinding.ItemImageBinding
 import com.dot.baseandroid.menu.list.adapters.viewholders.ListViewHolder
 import com.dot.baseandroid.menu.list.adapters.viewholders.ListViewMultipleHolder
 import com.dot.baseandroid.menu.list.models.ContentPlaceModel
 import com.dot.baseandroid.utils.AdapterCallback
 
-class MyListAdapter(val onClick:(ContentPlaceModel) -> Unit): ListAdapter<ContentPlaceModel, RecyclerView.ViewHolder> (AdapterCallback.DiffListCallback) {
+class MyListAdapter(val onClick: (ContentPlaceModel) -> Unit): ListAdapter<ContentPlaceModel, RecyclerView.ViewHolder>(AdapterCallback.DiffListCallback) {
 
     companion object{
         private val type_one: Int = 1
         private val type_two: Int = 2
     }
+
+    private val viewPool = RecycledViewPool()
 
     override fun getItemViewType(position: Int): Int {
         val contentPlaceModel = getItem(position)
@@ -35,7 +41,10 @@ class MyListAdapter(val onClick:(ContentPlaceModel) -> Unit): ListAdapter<Conten
         if(getItemViewType(position) == type_one){
             (holder as ListViewHolder).bind(contentPlaceModel)
         }else{
+            var adapterImage: ListMultipleAdapter = ListMultipleAdapter()
             (holder as ListViewMultipleHolder).bind(contentPlaceModel)
+            holder.binding.recyclerViewListImage.adapter = adapterImage
+            holder.binding.recyclerViewListImage.setRecycledViewPool(viewPool)
         }
         holder.itemView.setOnClickListener {
             onClick(contentPlaceModel)

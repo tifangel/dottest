@@ -4,14 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dot.baseandroid.databinding.ItemImageBinding
-import com.dot.baseandroid.menu.list.models.ContentPlaceModel
-import com.dot.baseandroid.menu.list.models.ImagePlaceModel
-import com.dot.baseandroid.menu.list.viewmodels.ImageViewModel
 
 class ImageViewHolder(val binding: ItemImageBinding): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(imagePlaceModel: ImagePlaceModel) {
-        binding.itemImage = ImageViewModel(imagePlaceModel)
+    fun bind(imageUrl: String) {
+        binding.itemImage = imageUrl
         binding.executePendingBindings()
     }
 

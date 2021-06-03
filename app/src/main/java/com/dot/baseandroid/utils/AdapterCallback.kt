@@ -2,13 +2,7 @@ package com.dot.baseandroid.utils
 
 import androidx.recyclerview.widget.DiffUtil
 import com.dot.baseandroid.menu.gallery.models.DataGalleryModel
-import com.dot.baseandroid.menu.gallery.models.GalleryModel
 import com.dot.baseandroid.menu.list.models.ContentPlaceModel
-import com.dot.baseandroid.menu.list.models.ImagePlaceModel
-import com.dot.baseandroid.menu.list.models.PlaceModel
-import com.dot.baseandroid.menu.profile.models.ProfileModel
-
-//import com.dot.baseandroid.menu.notification.models.NotificationModel
 
 class AdapterCallback {
 
@@ -43,13 +37,13 @@ class AdapterCallback {
         /**
          * diff callback adapter profile
          */
-        val DiffListImageCallback = object : DiffUtil.ItemCallback<ImagePlaceModel>() {
-            override fun areItemsTheSame(oldItem: ImagePlaceModel, newItem: ImagePlaceModel): Boolean {
+        val DiffListImageCallback = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: ImagePlaceModel, newItem: ImagePlaceModel): Boolean {
-                return oldItem.image == newItem.image
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+                return oldItem == newItem
             }
 
         }
