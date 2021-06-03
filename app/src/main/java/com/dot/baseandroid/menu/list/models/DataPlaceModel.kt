@@ -10,5 +10,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class DataPlaceModel(
     @SerializedName("header") @Expose val header: HeaderPlaceModel,
-    @SerializedName("content") @Expose val content: ContentPlaceModel,
+    @SerializedName("content") @Expose val content: MutableList<ContentPlaceModel>,
 ): Parcelable

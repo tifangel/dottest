@@ -5,8 +5,8 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="listDetail"
-                  type="com.dot.baseandroid.menu.list.viewmodels.ListDetailViewModel"/>
+        <variable name="listDetailMultiple"
+                type="com.dot.baseandroid.menu.list.viewmodels.ListDetailViewModel"/>
     </data>
 
     <LinearLayout
@@ -14,12 +14,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/global_detail_image_height"
-                android:scaleType="centerCrop"
-                app:setImageUrl="@{listDetail.imageUrl}"
-                tools:srcCompat="@tools:sample/backgrounds/scenic"/>
+                android:layout_height="@dimen/image_view_list_size">
+
+            <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerListDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <LinearLayout
+                    android:id="@+id/indicatorsListDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="15dp" />
+
+        </RelativeLayout>
 
         <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
@@ -28,14 +42,14 @@
                 android:layout_marginHorizontal="@dimen/item_recycler_view_margin"
                 android:textSize="@dimen/text_view_title_item_list_size"
                 android:textStyle="bold"
-                android:text="@{listDetail.title}"
+                android:text="@{listDetailMultiple.title}"
                 tools:text="@tools:sample/cities"/>
 
         <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/item_recycler_view_margin"
-                android:text="@{listDetail.content}"
+                android:text="@{listDetailMultiple.content}"
                 android:theme="@style/Caption"
                 tools:text="@tools:sample/lorem"/>
 

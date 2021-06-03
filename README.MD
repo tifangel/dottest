@@ -23,3 +23,14 @@
 - [Retrofit](https://github.com/square/retrofit)
 - [SDP](https://github.com/intuit/sdp)
 - [SSP](https://github.com/intuit/ssp)
+
+
+1.	Apa saja library Android yang sering atau biasa anda pakai? Jelaskan kegunaannya bagi anda.
+    Retrofit: Library untuk menghandle hal yang berkaitan dengan koneksi data dari android ke internet atau reserver, request data ke server.
+              Menghandle saat koneksi menyatakan fourth atau memang intercept data sebelum diproses ke Android
+
+2.	Apakah anda menggunakan prinsip clean code atau design pattern untuk project Android anda? Jelaskan penerapan clean code atau design pattern yang biasa anda gunakan dan manfaatnya untuk anda
+
+-	Penerapan clean code :
+-	Design pattern :
+

@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.dot.baseandroid.R
 import com.dot.baseandroid.databinding.FragmentListBinding
 import com.dot.baseandroid.menu.list.adapters.MyListAdapter
+import com.dot.baseandroid.menu.list.models.ContentPlaceModel
+import com.dot.baseandroid.menu.list.models.DataPlaceModel
 import com.dot.baseandroid.menu.list.models.PlaceModel
 import com.dot.baseandroid.menu.list.viewmodels.ListViewModel
 
@@ -55,12 +57,22 @@ class FragmentList: Fragment() {
         viewModel.liveDataList.observe(viewLifecycleOwner, {
             adapter.submitList(it)
         })
+        viewModel.headerDataList.observe(viewLifecycleOwner, {
+            binding.headerTitle.text = it?.title
+            binding.headerSubtitle.text = it?.subtitle
+        })
     }
 
-    private fun onItemClick(placeModel: PlaceModel) {
-        val action = FragmentListDirections.actionToOneDetail()
-        action.dataDetailListPlace = placeModel
-        findNavController().navigate(action)
+    private fun onItemClick(contentPlaceModel: ContentPlaceModel) {
+        if(contentPlaceModel.type == "image"){
+            val action = FragmentListDirections.actionToOneDetail()
+            action.dataDetailListPlace = contentPlaceModel
+            findNavController().navigate(action)
+        }else{
+            val action = FragmentListDirections.actionToOneMultipleDetail()
+            action.dataDetailListMutiplePlace = contentPlaceModel
+            findNavController().navigate(action)
+        }
     }
 
 }

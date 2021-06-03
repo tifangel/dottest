@@ -2,11 +2,13 @@ package com.dot.baseandroid.menu.list.viewmodels
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
+import com.dot.baseandroid.menu.list.models.ContentPlaceModel
 import com.dot.baseandroid.menu.list.models.PlaceModel
 
-class ItemListViewModel(placeModel: PlaceModel): ViewModel() {
+class ItemListViewModel(contentPlaceModel: ContentPlaceModel): ViewModel() {
 
-    var name: ObservableField<String> = ObservableField(placeModel.name)
-    var location: ObservableField<String> = ObservableField(placeModel.location)
-    var imageUrl: ObservableField<String> = ObservableField(placeModel.image)
+    var title: ObservableField<String> = ObservableField(contentPlaceModel.title)
+    var content: ObservableField<String> = ObservableField(contentPlaceModel.content)
+    var imageUrl: ObservableField<String> = ObservableField(contentPlaceModel.image)
+    var media: ObservableField<ArrayList<String>> = ObservableField(contentPlaceModel.media)
 }

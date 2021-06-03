@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface RestApiPlace {
 
     @GET("place.json")
-    suspend fun getListPlace(): Response<MutableList<PlaceModel>>
+    suspend fun getListPlace(): Response<PlaceModel>
 
 }

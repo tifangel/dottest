@@ -3,23 +3,21 @@ package com.dot.baseandroid.menu.list.adapters.viewholders
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dot.baseandroid.databinding.ItemListBinding
+import com.dot.baseandroid.databinding.ItemListMultipleBinding
 import com.dot.baseandroid.menu.list.models.ContentPlaceModel
-import com.dot.baseandroid.menu.list.models.PlaceModel
 import com.dot.baseandroid.menu.list.viewmodels.ItemListViewModel
 
-class ListViewHolder(val binding: ItemListBinding): RecyclerView.ViewHolder(binding.root) {
-
+class ListViewMultipleHolder(val binding: ItemListMultipleBinding): RecyclerView.ViewHolder(binding.root)  {
     fun bind(contentPlaceModel: ContentPlaceModel) {
-        binding.itemList = ItemListViewModel(contentPlaceModel)
+        binding.itemListMultiple = ItemListViewModel(contentPlaceModel)
         binding.executePendingBindings()
     }
 
     companion object {
-        fun from(parent: ViewGroup): ListViewHolder {
+        fun from(parent: ViewGroup): ListViewMultipleHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding: ItemListBinding = ItemListBinding.inflate(layoutInflater, parent, false)
-            return ListViewHolder(binding)
+            val binding: ItemListMultipleBinding = ItemListMultipleBinding.inflate(layoutInflater, parent, false)
+            return ListViewMultipleHolder(binding)
         }
     }
 }

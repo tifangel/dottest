@@ -12,7 +12,7 @@ class ListRepository(private val scope: CoroutineScope): SafeApiRequest() {
 
     private val restApi = ServiceFactory.getApiService(RestApiPlace::class.java)
 
-    fun getListPlace(onSuccess: (MutableList<PlaceModel>?) -> Unit, onError:(Exception) -> Unit) {
+    fun getListPlace(onSuccess: (PlaceModel?) -> Unit, onError:(Exception) -> Unit) {
         scope.launch {
             try {
                 val result = apiRequest { restApi.getListPlace() }
