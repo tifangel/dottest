@@ -1,3 +1,21 @@
+## Knowledge & Experience Questions
+
+1.	Apa saja library Android yang sering atau biasa anda pakai? Jelaskan kegunaannya bagi anda.
+    AndroidX: Library untuk
+
+    Retrofit: Library untuk menghandle REST Client
+    AndroidX: Library untuk mensupport penggunaan jetpack dan kompatibilitas versi lama android
+    Android Architecture Component: Library untuk mempermudah binding data ke UI, penyimpanan data dengan Room
+    Coroutines: mendapatkan data secara asinkron dengan fungsi builder livedata
+
+2.	Apakah anda menggunakan prinsip clean code atau design pattern untuk project Android anda? Jelaskan penerapan clean code atau design pattern yang biasa anda gunakan dan manfaatnya untuk anda
+
+-	Penerapan clean code : menghindari repeatable codes dan buat menjadi reuseable component agar source code lebih rapi, Penamaan Variable, Method, dan Class yang sesuai dengan fungsionalitasnya atau konsisten agar mudah memantain, dekomposisi jika source code terlalu panjang,
+-	Design pattern :
+    Adapter pattern: penerapan pattern untuk recyclerview
+    Observer pattern: penerapan pattern untuk perbaruan data secara otomatis
+
+
 ## DOT Base Project for Android 1.0.5 ##
 
 - Build with Kotlin, Use MVVM Pattern
@@ -25,12 +43,4 @@
 - [SSP](https://github.com/intuit/ssp)
 
 
-1.	Apa saja library Android yang sering atau biasa anda pakai? Jelaskan kegunaannya bagi anda.
-    Retrofit: Library untuk menghandle hal yang berkaitan dengan koneksi data dari android ke internet atau reserver, request data ke server.
-              Menghandle saat koneksi menyatakan fourth atau memang intercept data sebelum diproses ke Android
-
-2.	Apakah anda menggunakan prinsip clean code atau design pattern untuk project Android anda? Jelaskan penerapan clean code atau design pattern yang biasa anda gunakan dan manfaatnya untuk anda
-
--	Penerapan clean code :
--	Design pattern :
 
