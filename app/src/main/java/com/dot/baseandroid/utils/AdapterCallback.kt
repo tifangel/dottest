@@ -1,9 +1,12 @@
 package com.dot.baseandroid.utils
 
 import androidx.recyclerview.widget.DiffUtil
+import com.dot.baseandroid.menu.gallery.models.DataGalleryModel
 import com.dot.baseandroid.menu.gallery.models.GalleryModel
 import com.dot.baseandroid.menu.list.models.PlaceModel
-import com.dot.baseandroid.menu.notification.models.NotificationModel
+import com.dot.baseandroid.menu.profile.models.ProfileModel
+
+//import com.dot.baseandroid.menu.notification.models.NotificationModel
 
 class AdapterCallback {
 
@@ -25,26 +28,26 @@ class AdapterCallback {
         /**
          * diff callback adapter gallery
          */
-        val DiffGalleryCallback = object : DiffUtil.ItemCallback<GalleryModel>() {
-            override fun areContentsTheSame(oldItem: GalleryModel, newItem: GalleryModel): Boolean {
+        val DiffGalleryCallback = object : DiffUtil.ItemCallback<DataGalleryModel>() {
+            override fun areContentsTheSame(oldItem: DataGalleryModel, newItem: DataGalleryModel): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areItemsTheSame(oldItem: GalleryModel, newItem: GalleryModel): Boolean {
+            override fun areItemsTheSame(oldItem: DataGalleryModel, newItem: DataGalleryModel): Boolean {
                 return oldItem.caption == newItem.caption
             }
         }
 
         /**
-         * diff callback adapter notification
+         * diff callback adapter profile
          */
-        val DiffNotificationCallback = object : DiffUtil.ItemCallback<NotificationModel>() {
-            override fun areItemsTheSame(oldItem: NotificationModel, newItem: NotificationModel): Boolean {
-                return oldItem.message == newItem.message
+        val DiffProfileCallback = object : DiffUtil.ItemCallback<ProfileModel>() {
+            override fun areItemsTheSame(oldItem: ProfileModel, newItem: ProfileModel): Boolean {
+                return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: NotificationModel, newItem: NotificationModel): Boolean {
-                return oldItem == newItem
+            override fun areContentsTheSame(oldItem: ProfileModel, newItem: ProfileModel): Boolean {
+                return oldItem.data == newItem.data
             }
 
         }

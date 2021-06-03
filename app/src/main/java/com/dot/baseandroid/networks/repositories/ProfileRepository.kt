@@ -1,21 +1,22 @@
 package com.dot.baseandroid.networks.repositories
 
-import com.dot.baseandroid.menu.list.models.PlaceModel
+import android.util.Log
+import com.dot.baseandroid.menu.profile.models.ProfileModel
 import com.dot.baseandroid.networks.SafeApiRequest
 import com.dot.baseandroid.networks.ServiceFactory
-import com.dot.baseandroid.networks.rests.RestApiPlace
+import com.dot.baseandroid.networks.rests.RestApiProfile
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class ListRepository(private val scope: CoroutineScope): SafeApiRequest() {
+class ProfileRepository(private val scope: CoroutineScope): SafeApiRequest() {
 
-    private val restApi = ServiceFactory.getApiService(RestApiPlace::class.java)
+    private val restApi = ServiceFactory.getApiService(RestApiProfile::class.java)
 
-    fun getListPlace(onSuccess: (PlaceModel?) -> Unit, onError:(Exception) -> Unit) {
+    fun getProfile(onSuccess: (ProfileModel?) -> Unit, onError:(Exception) -> Unit) {
         scope.launch {
             try {
-                val result = apiRequest { restApi.getListPlace() }
+                val result = apiRequest { restApi.getProfile() }
                 onSuccess(result)
             } catch (e: Exception) {
                 if (e !is CancellationException) {
@@ -24,4 +25,5 @@ class ListRepository(private val scope: CoroutineScope): SafeApiRequest() {
             }
         }
     }
+
 }

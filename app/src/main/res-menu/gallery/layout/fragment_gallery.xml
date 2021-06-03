@@ -25,7 +25,7 @@
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="@integer/gallery_span_count"
-                    tools:listitem="@layout/item_gallery"
+                    tools:listitem="@layout/item_gallery_single"
                     tools:itemCount="20"/>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

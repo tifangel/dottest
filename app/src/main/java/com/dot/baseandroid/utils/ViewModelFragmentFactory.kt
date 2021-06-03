@@ -2,6 +2,7 @@ package com.dot.baseandroid.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.dot.baseandroid.menu.gallery.models.DataGalleryModel
 import com.dot.baseandroid.menu.gallery.models.GalleryModel
 import com.dot.baseandroid.menu.gallery.viewmodels.GalleryDetailViewModel
 import com.dot.baseandroid.menu.list.models.PlaceModel
@@ -17,7 +18,7 @@ class ViewModelFragmentFactory(private val any: Any): ViewModelProvider.NewInsta
         if (modelClass == ListDetailViewModel::class.java) {
             return ListDetailViewModel(any as PlaceModel) as T
         } else if (modelClass == GalleryDetailViewModel::class.java) {
-            return GalleryDetailViewModel(any as GalleryModel) as T
+            return GalleryDetailViewModel(any as DataGalleryModel) as T
         }
         return super.create(modelClass)
     }

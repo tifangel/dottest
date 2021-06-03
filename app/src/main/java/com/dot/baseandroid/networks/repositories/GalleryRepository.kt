@@ -12,7 +12,7 @@ class GalleryRepository(private val scope: CoroutineScope): SafeApiRequest() {
 
     private val restApi = ServiceFactory.getApiService(RestApiGallery::class.java)
 
-    fun getListGallery(onSuccess: (MutableList<GalleryModel>?) -> Unit, onError:(Exception) -> Unit) {
+    fun getListGallery(onSuccess: (GalleryModel?) -> Unit, onError:(Exception) -> Unit) {
         scope.launch {
             try {
                 val result = apiRequest { restApi.getListGallery() }

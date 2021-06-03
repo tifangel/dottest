@@ -9,7 +9,7 @@
     <!-- fragment list -->
     <fragment
             android:id="@+id/fragmentOne"
-            android:label="@string/one"
+            android:label="@string/list"
             android:name="com.dot.baseandroid.menu.list.views.FragmentList"
             tools:layout="@layout/fragment_list">
 
@@ -37,7 +37,7 @@
     <!-- fragment gallery -->
     <fragment
             android:id="@+id/fragmentTwo"
-            android:label="@string/two"
+            android:label="@string/gallery"
             android:name="com.dot.baseandroid.menu.gallery.views.FragmentGallery"
             tools:layout="@layout/fragment_gallery">
 
@@ -50,38 +50,25 @@
 
     <fragment
             android:id="@+id/fragmentTwoDetail"
-            android:label="@string/detail"
+            android:label="@string/detailgallery"
             android:name="com.dot.baseandroid.menu.gallery.views.FragmentGalleryDetail"
             tools:layout="@layout/fragment_gallery_detail">
 
         <argument
                 android:name="data_detail_gallery"
-                app:argType="com.dot.baseandroid.menu.gallery.models.GalleryModel"
+                app:argType="com.dot.baseandroid.menu.gallery.models.DataGalleryModel"
                 app:nullable="true"
                 android:defaultValue="@null"/>
 
     </fragment>
 
-    <!-- fragment notification -->
+    <!-- fragment profile -->
     <fragment
             android:id="@+id/fragmentThree"
-            android:label="@string/three"
-            android:name="com.dot.baseandroid.menu.notification.views.FragmentNotification"
-            tools:layout="@layout/fragment_notification">
-
-        <action android:id="@+id/action_to_notification_detail"
-            app:destination="@+id/activityNotificationDetail"/>
+            android:label="@string/profile"
+            android:name="com.dot.baseandroid.menu.profile.views.FragmentProfile"
+            tools:layout="@layout/fragment_profile">
 
     </fragment>
-
-    <activity android:id="@+id/activityNotificationDetail"
-            android:name="com.dot.baseandroid.menu.notification.views.DetailNotificationActivity"
-            android:label="@string/detail"
-            tools:layout="@layout/activity_notification_detail">
-
-        <argument android:name="data_detail_notification"
-            app:argType="com.dot.baseandroid.menu.notification.models.NotificationModel" />
-
-    </activity>
 
 </navigation>

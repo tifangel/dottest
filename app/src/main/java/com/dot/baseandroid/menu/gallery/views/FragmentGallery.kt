@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.dot.baseandroid.R
 import com.dot.baseandroid.databinding.FragmentGalleryBinding
 import com.dot.baseandroid.menu.gallery.adapters.GalleryAdapter
-import com.dot.baseandroid.menu.gallery.models.GalleryModel
+import com.dot.baseandroid.menu.gallery.models.DataGalleryModel
 import com.dot.baseandroid.menu.gallery.viewmodels.GalleryViewModel
 
 class FragmentGallery: Fragment() {
@@ -57,7 +57,7 @@ class FragmentGallery: Fragment() {
         binding.recyclerViewListGallery.adapter = adapter
     }
 
-    private fun onItemClick(galleryModel: GalleryModel) {
+    private fun onItemClick(galleryModel: DataGalleryModel) {
         val action = FragmentGalleryDirections.actionToTwoDetail()
         action.dataDetailGallery = galleryModel
         findNavController().navigate(action)

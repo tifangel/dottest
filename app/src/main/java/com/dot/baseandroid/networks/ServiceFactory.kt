@@ -1,5 +1,6 @@
 package com.dot.baseandroid.networks
 
+import android.util.Log
 import com.dot.baseandroid.BuildConfig
 import com.dot.baseandroid.data.*
 import okhttp3.OkHttpClient
@@ -25,7 +26,7 @@ object ServiceFactory {
         clientBuilder.readTimeout(TIME_OUT, TimeUnit.SECONDS)
 
          return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(BuildConfig.NEW_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(clientBuilder.build())
             .build()

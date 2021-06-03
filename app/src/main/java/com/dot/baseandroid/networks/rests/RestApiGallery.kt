@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface RestApiGallery {
 
-    @GET("Gallery_Malang_Batu.json")
-    suspend fun getListGallery(): Response<MutableList<GalleryModel>>
+    @GET("gallery.json")
+    suspend fun getListGallery(): Response<GalleryModel>
 
 }

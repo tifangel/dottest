@@ -1,5 +1,6 @@
 package com.dot.baseandroid.networks
 
+import android.util.Log
 import retrofit2.Response
 
 abstract class SafeApiRequest {

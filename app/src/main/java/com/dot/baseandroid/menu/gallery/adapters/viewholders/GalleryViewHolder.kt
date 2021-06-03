@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dot.baseandroid.databinding.ItemGalleryBinding
+import com.dot.baseandroid.menu.gallery.models.DataGalleryModel
 import com.dot.baseandroid.menu.gallery.models.GalleryModel
 import com.dot.baseandroid.menu.gallery.viewmodels.ItemGalleryViewModel
 
 class GalleryViewHolder(val binding: ItemGalleryBinding): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(galleryModel: GalleryModel) {
-        binding.itemGallery = ItemGalleryViewModel(galleryModel)
+    fun bind(dataGalleryModel: DataGalleryModel) {
+        binding.itemGallery = ItemGalleryViewModel(dataGalleryModel)
         binding.executePendingBindings()
     }
 

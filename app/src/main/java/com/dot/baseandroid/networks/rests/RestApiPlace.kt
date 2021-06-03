@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface RestApiPlace {
 
-    @GET("List_place_malang_batu.json")
-    suspend fun getListPlace(): Response<MutableList<PlaceModel>>
+    @GET("place.json")
+    suspend fun getListPlace(): Response<PlaceModel>
 
 }
