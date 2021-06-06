@@ -28,6 +28,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+//        viewBinding = true
     }
     sourceSets {
         main {
@@ -58,6 +59,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+//    plugins {
+//        kotlin("android.extensions")
+//    }
+//    viewBinding{
+//        enabled = true
+//    }
 }
 
 androidExtensions {
