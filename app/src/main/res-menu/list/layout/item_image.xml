@@ -13,10 +13,10 @@
             android:layout_height="@dimen/image_view_list_size"
             android:layout_marginEnd="@dimen/item_recycler_view_margin">
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<!--    <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageViewItemList"
@@ -26,7 +26,7 @@
                 app:setImageUrl="@{itemImage}"
                 tools:srcCompat="@tools:sample/backgrounds/scenic"/>
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     </androidx.cardview.widget.CardView>
 

@@ -51,22 +51,9 @@ class MyListAdapter(val onClick: (ContentPlaceModel) -> Unit): ListAdapter<Conte
             holder.binding.recyclerViewListImage.layoutManager = childLayoutManager
             holder.binding.recyclerViewListImage.adapter = adapterImage
             holder.binding.recyclerViewListImage.setRecycledViewPool(viewPool)
-//            holder.binding.recyclerViewListImage.context.
-//            val itemBinding = holder.binding as ItemImageBinding
-//            itemBinding.itemImage =
         }
         holder.itemView.setOnClickListener {
             onClick(contentPlaceModel)
         }
     }
-
-//    @BindingAdapter(value = ["setItemImages"])
-//    fun RecyclerView.setItemImages(itemImages: ArrayList<String>) {
-//        if(itemImages.isNotEmpty()){`
-//            val listMultipleAdapter = ListMultipleAdapter()
-//            listMultipleAdapter.submitList(itemImages)
-//
-//            adapter = listMultipleAdapter
-//        }
-//    }
 }

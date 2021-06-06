@@ -32,16 +32,6 @@
                     tools:itemCount="3"
                     tools:listitem="@layout/item_image"/>
 
-<!--            <LinearLayout-->
-<!--                    android:id="@+id/indicatorsList"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignParentBottom="true"-->
-<!--                    android:layout_marginBottom="10dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:padding="15dp" />-->
-
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView

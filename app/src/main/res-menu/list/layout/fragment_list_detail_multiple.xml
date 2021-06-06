@@ -6,7 +6,7 @@
 
     <data>
         <variable name="listDetailMultiple"
-                type="com.dot.baseandroid.menu.list.viewmodels.ListDetailViewModel"/>
+                type="com.dot.baseandroid.menu.list.viewmodels.ItemListViewModel"/>
     </data>
 
     <LinearLayout
@@ -18,10 +18,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_view_list_size">
 
-            <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPagerListDetail"
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDetailImage"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_image_detail"/>
 
             <LinearLayout
                     android:id="@+id/indicatorsListDetail"

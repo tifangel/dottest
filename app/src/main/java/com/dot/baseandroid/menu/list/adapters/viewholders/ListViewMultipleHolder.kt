@@ -11,11 +11,9 @@ import com.dot.baseandroid.menu.list.viewmodels.ItemListViewModel
 class ListViewMultipleHolder(val binding: ItemListMultipleBinding): RecyclerView.ViewHolder(binding.root)  {
 
     private lateinit var bindingitem: ItemImageBinding
-//    private val viewModel: ImageViewModel by viewModels()
 
     fun bind(contentPlaceModel: ContentPlaceModel) {
         binding.itemListMultiple = ItemListViewModel(contentPlaceModel)
-
         binding.executePendingBindings()
     }
 

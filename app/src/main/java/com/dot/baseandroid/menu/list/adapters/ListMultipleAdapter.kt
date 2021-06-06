@@ -2,7 +2,6 @@ package com.dot.baseandroid.menu.list.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.dot.baseandroid.menu.list.adapters.viewholders.ImageViewHolder
 import com.dot.baseandroid.utils.AdapterCallback
 
