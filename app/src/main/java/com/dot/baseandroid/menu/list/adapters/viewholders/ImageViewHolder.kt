@@ -14,6 +14,7 @@ class ImageViewHolder(val binding: ItemImageBinding): RecyclerView.ViewHolder(bi
 
     companion object {
         fun from(parent: ViewGroup): ImageViewHolder {
+
             val layoutInflater = LayoutInflater.from(parent.context)
             val binding: ItemImageBinding = ItemImageBinding.inflate(layoutInflater, parent, false)
             return ImageViewHolder(binding)

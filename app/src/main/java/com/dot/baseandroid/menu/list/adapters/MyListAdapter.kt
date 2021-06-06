@@ -1,8 +1,11 @@
 package com.dot.baseandroid.menu.list.adapters
 
+import android.annotation.SuppressLint
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.core.view.get
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.RecycledViewPool
@@ -36,18 +39,34 @@ class MyListAdapter(val onClick: (ContentPlaceModel) -> Unit): ListAdapter<Conte
         return ListViewMultipleHolder.from(parent)
     }
 
+    @SuppressLint("WrongConstant")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val contentPlaceModel = getItem(position)
         if(getItemViewType(position) == type_one){
             (holder as ListViewHolder).bind(contentPlaceModel)
         }else{
-            var adapterImage: ListMultipleAdapter = ListMultipleAdapter()
+            var adapterImage = ListMultipleAdapter(contentPlaceModel.media)
+            val childLayoutManager = LinearLayoutManager(holder.itemView.rootView.context, LinearLayout.HORIZONTAL, false)
             (holder as ListViewMultipleHolder).bind(contentPlaceModel)
+            holder.binding.recyclerViewListImage.layoutManager = childLayoutManager
             holder.binding.recyclerViewListImage.adapter = adapterImage
             holder.binding.recyclerViewListImage.setRecycledViewPool(viewPool)
+//            holder.binding.recyclerViewListImage.context.
+//            val itemBinding = holder.binding as ItemImageBinding
+//            itemBinding.itemImage =
         }
         holder.itemView.setOnClickListener {
             onClick(contentPlaceModel)
         }
     }
+
+//    @BindingAdapter(value = ["setItemImages"])
+//    fun RecyclerView.setItemImages(itemImages: ArrayList<String>) {
+//        if(itemImages.isNotEmpty()){`
+//            val listMultipleAdapter = ListMultipleAdapter()
+//            listMultipleAdapter.submitList(itemImages)
+//
+//            adapter = listMultipleAdapter
+//        }
+//    }
 }

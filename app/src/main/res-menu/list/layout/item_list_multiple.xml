@@ -14,13 +14,14 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:layout_marginHorizontal="@dimen/item_recycler_view_margin"
+            android:layout_marginStart="@dimen/item_recycler_view_margin"
             android:layout_marginBottom="@dimen/item_recycler_view_margin"
             android:foreground="?android:attr/selectableItemBackground">
 
-        <RelativeLayout
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/image_view_list_size">
+                android:layout_height="@dimen/image_view_list_size"
+                android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewListImage"
@@ -30,17 +31,18 @@
                     android:orientation="horizontal"
                     tools:itemCount="3"
                     tools:listitem="@layout/item_image"/>
-            <LinearLayout
-                    android:id="@+id/indicatorsList"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="15dp" />
 
-        </RelativeLayout>
+<!--            <LinearLayout-->
+<!--                    android:id="@+id/indicatorsList"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="15dp" />-->
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
