@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.ListAdapter
 import com.dot.baseandroid.menu.list.adapters.viewholders.ImageViewHolder
 import com.dot.baseandroid.utils.AdapterCallback
 
-class ListMultipleAdapter(private val listImage: ArrayList<String>): ListAdapter<String, ImageViewHolder> (AdapterCallback.DiffListImageCallback) {
+class ListMultipleAdapter(private val listImage: ArrayList<String>, val onClick: () -> Unit): ListAdapter<String, ImageViewHolder> (AdapterCallback.DiffListImageCallback) {
 
     override fun getItemCount(): Int {
         return listImage.size
@@ -22,5 +22,6 @@ class ListMultipleAdapter(private val listImage: ArrayList<String>): ListAdapter
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imagePlaceModel = getItem(position)
         holder.bind(imagePlaceModel)
+        holder.itemView.setOnClickListener { onClick() }
     }
 }

@@ -45,7 +45,9 @@ class MyListAdapter(val onClick: (ContentPlaceModel) -> Unit): ListAdapter<Conte
         if(getItemViewType(position) == type_one){
             (holder as ListViewHolder).bind(contentPlaceModel)
         }else{
-            var adapterImage = ListMultipleAdapter(contentPlaceModel.media)
+            var adapterImage = ListMultipleAdapter(contentPlaceModel.media, onClick = {
+                onClick(contentPlaceModel)
+            })
             val childLayoutManager = LinearLayoutManager(holder.itemView.rootView.context, LinearLayout.HORIZONTAL, false)
             (holder as ListViewMultipleHolder).bind(contentPlaceModel)
             holder.binding.recyclerViewListImage.layoutManager = childLayoutManager

@@ -8,25 +8,12 @@
                 type="String"/>
     </data>
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewItemList"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/image_view_list_size">
-
-<!--        <LinearLayout-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
-
-            <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imageViewItemList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    app:setImageUrl="@{itemImageDetail}"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic"/>
-
-<!--        </LinearLayout>-->
-
-    </androidx.cardview.widget.CardView>
+            android:layout_height="@dimen/image_view_list_size"
+            android:scaleType="centerCrop"
+            app:setImageUrl="@{itemImageDetail}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"/>
 
 </layout>
