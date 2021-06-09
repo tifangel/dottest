@@ -18,21 +18,14 @@
             android:layout_marginBottom="@dimen/item_recycler_view_margin"
             android:foreground="?android:attr/selectableItemBackground">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewListImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_view_list_size"
-                android:orientation="horizontal">
-
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewListImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"
-                    tools:itemCount="3"
-                    tools:listitem="@layout/item_image"/>
-
-        </LinearLayout>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_image"/>
 
         <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"

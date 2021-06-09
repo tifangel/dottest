@@ -8,20 +8,13 @@
                 type="String"/>
     </data>
 
-    <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewItemList"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/image_view_list_size"
-            android:layout_marginEnd="@dimen/item_recycler_view_margin">
-
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageViewItemList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/image_view_list_size"
+                android:layout_marginEnd="@dimen/item_recycler_view_margin"
                 android:scaleType="centerCrop"
                 app:setImageUrl="@{itemImage}"
                 tools:srcCompat="@tools:sample/backgrounds/scenic"/>
-
-    </androidx.cardview.widget.CardView>
 
 </layout>
